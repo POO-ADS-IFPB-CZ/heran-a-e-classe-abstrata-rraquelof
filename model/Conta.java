@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class Conta {
     private int numero;
     private String nome_titular;
@@ -40,6 +42,14 @@ public class Conta {
 
     public void imprimirTipoConta(){
         System.out.println("Conta Comum");
+    }
+    public static Conta encontrarConta(List<Conta> contas, int numero) {
+        for (Conta conta : contas) {
+            if (conta.getNumero() == numero) {
+                return conta;
+            }
+        }
+        return null;
     }
 
 }
